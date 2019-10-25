@@ -1,4 +1,4 @@
-docker run --name Abathur -v ~:/root -p 3000:3000 -dit python:2-slim
+docker run --name Abathur -v ~/:/root -p 3000:3000 -dit python:2-slim
 docker exec -e FLASK_APP=/root/app.py -it Abathur bash
 pip install flask
 cd root
