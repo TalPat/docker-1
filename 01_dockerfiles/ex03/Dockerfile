@@ -8,6 +8,8 @@ RUN		 	apt-get update &&\
 			apt-get install -y gitlab-ce &&\
 			sed -i "s/# grafana\['enable'\] = true/grafana['enable'] = false/g" /etc/gitlab/gitlab.rb &&\
 			sed -i "s/unicorn\['worker_timeout'\] = 60/unicorn\['worker_timeout'\] = 300/g" /etc/gitlab/gitlab.rb
+			# sed -i "s/# letsencrypt\['enable'\] = nil/letsencrypt\['enable'\] = true/g" /etc/gitlab/gitlab.rb &&\
+			# sed -i "s/external_url 'http://gitlab.example.com'/external_url 'https://localhost'/g" /etc/gitlab/gitlab.rb
 
 EXPOSE		22 80 443
 
